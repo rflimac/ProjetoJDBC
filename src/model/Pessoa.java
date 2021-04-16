@@ -4,6 +4,7 @@ public class Pessoa {
 
 	private String nome;
 	private String cpf;
+	private int idade;
 	private String sexo;
 	private Endereco endereco;
 	private Conta conta;
@@ -38,6 +39,12 @@ public class Pessoa {
 	}
 	public void setConta(Conta conta) {
 		this.conta = conta;
+	}
+	public int getIdade() {
+		return idade;
+	}
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 	
 	

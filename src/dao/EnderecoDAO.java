@@ -2,7 +2,6 @@ package dao;
 
 import java.util.List;
 
-import model.Conta;
 import model.Endereco;
 
 public interface EnderecoDAO {

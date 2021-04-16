@@ -24,11 +24,11 @@ public class ContaDAOImpl implements ContaDAO {
 		String sql = "INSERT INTO CONTA(NUMERO, SALDO, LIMITE) VALUES (?, ?, ?)";
 
 		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, conta.getNumero());
-			ps.setDouble(3, conta.getLimite());
-			ps.setDouble(2, conta.getSaldo());
-			ps.execute();
+			PreparedStatement cont = conn.prepareStatement(sql);
+			cont.setInt(1, conta.getNumero());
+			cont.setDouble(3, conta.getLimite());
+			cont.setDouble(2, conta.getSaldo());
+			cont.execute();
 			System.out.println("Conta inserida com sucesso");
 		} catch (SQLException e) {
 			System.out.println("Erro ao inserir conta no banco " + e.getMessage());
@@ -46,11 +46,11 @@ public class ContaDAOImpl implements ContaDAO {
 		String sql = "UPDATE CONTA SET SALDO = ? , LIMITE = ? WHERE NUMERO = ?";
 
 		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setDouble(1, conta.getSaldo());
-			ps.setDouble(2, conta.getLimite());
-			ps.setInt(3, conta.getNumero());
-			ps.executeUpdate();
+			PreparedStatement cont = conn.prepareStatement(sql);
+			cont.setDouble(1, conta.getSaldo());
+			cont.setDouble(2, conta.getLimite());
+			cont.setInt(3, conta.getNumero());
+			cont.executeUpdate();
 			System.out.println("Conta atualizada com sucesso ");
 		} catch (Exception e) {
 			System.out.println("Erro ao atualizar a conta do banco " + e.getMessage());
@@ -69,9 +69,9 @@ public class ContaDAOImpl implements ContaDAO {
 		String sql = "DELETE FROM CONTA WHERE NUMERO =?";
 
 		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, numero);
-			ps.execute();
+			PreparedStatement cont = conn.prepareStatement(sql);
+			cont.setInt(1, numero);
+			cont.execute();
 			System.out.println("Conta deletada com sucesso ");
 		} catch (Exception e) {
 			System.out.println("Erro ao deletar conta no Banco" + e.getMessage());

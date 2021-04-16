@@ -8,19 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.EnderecoDAO;
-import model.Conta;
 import model.Endereco;
 import model.util.Conexao;
 
 public class EnderecoDAOImpl implements EnderecoDAO {
 
 	Conexao conexao = new Conexao();
-
-	@Override
-	public int getSequence() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public void salvar(Endereco endereco) {
@@ -135,5 +128,7 @@ public class EnderecoDAOImpl implements EnderecoDAO {
 
 		return retorno;
 	}
+
+	
 
 }
